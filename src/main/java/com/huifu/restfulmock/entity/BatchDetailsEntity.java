@@ -12,6 +12,7 @@ public class BatchDetailsEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Integer inquiry_id;
+
     private String member_code;
     private String product_code;
     private String ext_trace_no;

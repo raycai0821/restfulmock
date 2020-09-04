@@ -14,6 +14,7 @@ public class BatchDetailsServiceImpl implements BatchDetailsService {
     @Autowired
     private BatchDetailsDao batchDetailsDao;
 
+
     @Override
     public void addDetails(BatchDetailsEntity batchDetailsEntity) {
 
@@ -38,4 +39,5 @@ public class BatchDetailsServiceImpl implements BatchDetailsService {
     public List<BatchDetailsEntity> findAllDetails() {
         return batchDetailsDao.findAll();
     }
+
 }
