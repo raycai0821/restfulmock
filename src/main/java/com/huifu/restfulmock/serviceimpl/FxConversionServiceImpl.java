@@ -2,7 +2,7 @@ package com.huifu.restfulmock.serviceimpl;
 
 import com.huifu.restfulmock.dao.FxConversionDetailsDao;
 import com.huifu.restfulmock.entity.BatchDetailsEntity;
-import com.huifu.restfulmock.entity.ChannelDetailsEntity;
+import com.huifu.restfulmock.entity.FxConversionEntity;
 import com.huifu.restfulmock.service.FxConversionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,11 +16,11 @@ import java.util.List;
 public class FxConversionServiceImpl implements FxConversionService {
 
     @Autowired
-    private FxConversionDetailsDao channelDetailsDao;
+    private FxConversionDetailsDao fxConversionDetailsDao;
 
     @Override
-    public void addDetails(BatchDetailsEntity batchDetailsEntity) {
-
+    public void addDetails(FxConversionEntity fxConversionEntity) {
+        fxConversionDetailsDao.save(fxConversionEntity);
     }
 
     @Override
@@ -34,12 +34,12 @@ public class FxConversionServiceImpl implements FxConversionService {
     }
 
     @Override
-    public ChannelDetailsEntity findDetail(Integer id) {
-        return channelDetailsDao.getOne(id);
+    public FxConversionEntity findDetail(Integer id) {
+        return fxConversionDetailsDao.getOne(id);
     }
 
     @Override
-    public List<ChannelDetailsEntity> findAllDetails() {
+    public List<FxConversionEntity> findAllDetails() {
         return null;
     }
 }

@@ -1,20 +1,20 @@
 package com.huifu.restfulmock.service;
 
 import com.huifu.restfulmock.entity.BatchDetailsEntity;
-import com.huifu.restfulmock.entity.ChannelDetailsEntity;
+import com.huifu.restfulmock.entity.FxConversionEntity;
 
 import java.util.List;
 
 public interface FxConversionService {
 
-    void addDetails(BatchDetailsEntity batchDetailsEntity);
+    void addDetails(FxConversionEntity fxConversionEntity);
 
     void delDetails(Integer inquiry_id);
 
     void updateDetail(Integer inquiry_id);
 
-    ChannelDetailsEntity findDetail(Integer inquiry_id);
+    FxConversionEntity findDetail(Integer inquiry_id);
 
-    List<ChannelDetailsEntity> findAllDetails();
+    List<FxConversionEntity> findAllDetails();
 
 }
