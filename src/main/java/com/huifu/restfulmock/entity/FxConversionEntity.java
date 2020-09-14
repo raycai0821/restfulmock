@@ -3,6 +3,7 @@ package com.huifu.restfulmock.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * @author leifeng.cai
@@ -15,7 +16,10 @@ public class FxConversionEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Integer id;
+
+    @NotNull(message = "fx_batch_id不能为空")
     private Integer fx_batch_id;
+
     private String channel_code;
     private String quote_id;
     private String reference_rate;

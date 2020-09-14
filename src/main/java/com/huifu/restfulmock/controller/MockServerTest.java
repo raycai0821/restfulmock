@@ -5,6 +5,8 @@ import com.huifu.restfulmock.entity.BatchDetailsEntity;
 import com.huifu.restfulmock.entity.FxConversionEntity;
 import com.huifu.restfulmock.service.BatchDetailsService;
 import com.huifu.restfulmock.service.FxConversionService;
+import com.huifu.restfulmock.serviceimpl.BatchDetailsServiceImpl;
+import com.huifu.restfulmock.serviceimpl.FxConversionServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,10 +23,10 @@ import java.util.List;
 public class MockServerTest {
 
     @Autowired
-    private BatchDetailsService batchDetailsService;
+    private BatchDetailsServiceImpl batchDetailsService;
 
     @Autowired
-    private FxConversionService fxConversionService;
+    private FxConversionServiceImpl fxConversionService;
 
     @RequestMapping("/fxAll")
     public List<BatchDetailsEntity> findAllDetails() {

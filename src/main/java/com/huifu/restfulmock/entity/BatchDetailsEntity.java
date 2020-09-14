@@ -1,8 +1,11 @@
 package com.huifu.restfulmock.entity;
 
+
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
@@ -13,11 +16,25 @@ public class BatchDetailsEntity {
     @Id
     private Integer inquiry_id;
 
+    @NotNull(message = "member_code不能为空")
     private String member_code;
+
     private String product_code;
     private String ext_trace_no;
     private String source_cur;
     private String source_amt;
+    private String target_cur;
+    private String target_amt;
+    private String conversion_direction;
+    private String quote_channel_code;
+    private Integer channel_ex_rate;
+    private Integer hadsund_ex_rate;
+    private Integer deal_ex_rate;
+    private String confirmer;
+    private String create_time;
+    private String update_time;
+    private String expire_time;
+    private String status;
 
     public Integer getInquiry_id() {
         return inquiry_id;
@@ -163,16 +180,5 @@ public class BatchDetailsEntity {
         this.status = status;
     }
 
-    private String target_cur;
-    private String target_amt;
-    private String conversion_direction;
-    private String quote_channel_code;
-    private Integer channel_ex_rate;
-    private Integer hadsund_ex_rate;
-    private Integer deal_ex_rate;
-    private String confirmer;
-    private String create_time;
-    private String update_time;
-    private String expire_time;
-    private String status;
+
 }

@@ -1,7 +1,6 @@
 package com.huifu.restfulmock.serviceimpl;
 
 import com.huifu.restfulmock.dao.FxConversionDetailsDao;
-import com.huifu.restfulmock.entity.BatchDetailsEntity;
 import com.huifu.restfulmock.entity.FxConversionEntity;
 import com.huifu.restfulmock.service.FxConversionService;
 import org.springframework.beans.factory.annotation.Autowired;

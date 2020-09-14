@@ -1,6 +1,5 @@
 package com.huifu.restfulmock.service;
 
-import com.huifu.restfulmock.entity.BatchDetailsEntity;
 import com.huifu.restfulmock.entity.FxConversionEntity;
 
 import java.util.List;
