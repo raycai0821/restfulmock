@@ -15,36 +15,89 @@ public class FxConversionEntity {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @Column(name = "id")
     private Integer id;
 
     @NotNull(message = "fx_batch_id不能为空")
+    @Column(name = "fx_batch_id")
     private Integer fx_batch_id;
 
+    @Column(name = "channel_code")
     private String channel_code;
+
+    @Column(name = "quote_id")
     private String quote_id;
+
+    @Column(name = "reference_rate")
     private String reference_rate;
+
+    @Column(name = "client_rate")
     private String client_rate;
+
+    @Column(name = "currency_pair")
     private String currency_pair;
+
+    @Column(name = "hx_order_no")
     private String hx_order_no;
+
+    @Column(name = "hx_create_time")
     private String hx_create_time;
+
+    @Column(name = "conversion_date")
     private String conversion_date;
+
+    @Column(name = "conversion_id")
     private String conversion_id;
+
+    @Column(name = "created_at")
     private String created_at;
+
+    @Column(name = "last_updated_at")
     private String last_updated_at;
+
+    @Column(name = "short_reference_id")
     private String short_reference_id;
+
+    @Column(name = "settlement_cutoff_time")
     private String settlement_cutoff_time;
+
+    @Column(name = "reason")
     private String reason;
+
+    @Column(name = "source_cur")
     private String source_cur;
+
+    @Column(name = "target_cur")
     private String target_cur;
+
+    @Column(name = "source_amt")
     private String source_amt;
+
+    @Column(name = "target_amt")
     private String target_amt;
+
+    @Column(name = "dealt_currency")
     private String dealt_currency;
+
+    @Column(name = "hx_rate_margin_true")
     private String hx_rate_margin_true;
+
+    @Column(name = "status")
     private String status;
+
+    @Column(name = "error_message")
     private String error_message;
+
+    @Column(name = "create_time")
     private String create_time;
+
+    @Column(name = "creator")
     private String creator;
+
+    @Column(name = "update_time")
     private String update_time;
+
+    @Column(name = "updater")
     private String updater;
 
     public Integer getId() {

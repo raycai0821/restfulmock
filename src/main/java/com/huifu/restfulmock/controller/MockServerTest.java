@@ -3,15 +3,12 @@ package com.huifu.restfulmock.controller;
 
 import com.huifu.restfulmock.entity.BatchDetailsEntity;
 import com.huifu.restfulmock.entity.FxConversionEntity;
-import com.huifu.restfulmock.service.BatchDetailsService;
-import com.huifu.restfulmock.service.FxConversionService;
+import com.huifu.restfulmock.enums.ResultCode;
 import com.huifu.restfulmock.serviceimpl.BatchDetailsServiceImpl;
 import com.huifu.restfulmock.serviceimpl.FxConversionServiceImpl;
+import com.huifu.restfulmock.vo.ResultVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -38,8 +35,12 @@ public class MockServerTest {
         return batchDetailsService.findDetail(inquiry_id);
     }
     @RequestMapping("/conversion/create")
-    public void createConversion(FxConversionEntity fxConversionEntity){
-        fxConversionEntity.setChannel_code("test");
-        fxConversionService.addDetails(fxConversionEntity);
+    @ExceptionHandler
+    public ResultVO createConversion(@RequestBody FxConversionEntity fxConversionEntity){
+
+//        if (fxConversionService.addDetails(fxConversionEntity)){
+//            return new ResultVO(fxConversionEntity);
+//        }
+        return new ResultVO(ResultCode.ERROR);
     }
 }
