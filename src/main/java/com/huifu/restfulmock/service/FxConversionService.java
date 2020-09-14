@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface FxConversionService {
 
-    void addDetails(FxConversionEntity fxConversionEntity);
+    String addDetails(FxConversionEntity fxConversionEntity);
 
     void delDetails(Integer inquiry_id);
 

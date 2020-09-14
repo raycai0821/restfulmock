@@ -18,8 +18,9 @@ public class FxConversionServiceImpl implements FxConversionService {
     private FxConversionDetailsDao fxConversionDetailsDao;
 
     @Override
-    public void addDetails(FxConversionEntity fxConversionEntity) {
+    public String addDetails(FxConversionEntity fxConversionEntity) {
         fxConversionDetailsDao.save(fxConversionEntity);
+        return "success";
     }
 
     @Override
