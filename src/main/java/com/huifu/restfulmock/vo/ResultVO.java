@@ -14,15 +14,15 @@ public class ResultVO<T> {
     private String msg;
     private T data;
 
-    public ResultVO(T data) {
-        this(ResultCode.SUCCESS, data);
+    public ResultVO(T data, String errorMsg) {
+        this(ResultCode.SUCCESS, errorMsg, data);
     }
 
-    public ResultVO(ResultCode resultCode, T data) {
+    public ResultVO(ResultCode resultCode, String errorMsg, T data) {
         this.code = resultCode.getCode();
-        this.msg = resultCode.getMsg();
+        if (errorMsg == null || errorMsg.equals("")) {
+            this.msg = resultCode.getMsg();
+        } else this.msg = errorMsg;
         this.data = data;
     }
-
-
 }

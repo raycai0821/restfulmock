@@ -2,11 +2,13 @@ package com.huifu.restfulmock.enums;
 
 
 import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author RudeCrab
  * @description 响应码枚举
  */
+
 @Getter
 public enum ResultCode {
 
@@ -19,6 +21,7 @@ public enum ResultCode {
     ERROR(5000, "未知错误");
 
     private int code;
+
     private String msg;
 
     ResultCode(int code, String msg) {

@@ -8,8 +8,11 @@ import com.huifu.restfulmock.serviceimpl.BatchDetailsServiceImpl;
 import com.huifu.restfulmock.serviceimpl.FxConversionServiceImpl;
 import com.huifu.restfulmock.vo.ResultVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 //requestMapping注释用于定义访问REST端点的Request URI
@@ -34,13 +37,17 @@ public class MockServerTest {
     public BatchDetailsEntity findDetailByid(@PathVariable("id") Integer inquiry_id) {
         return batchDetailsService.findDetail(inquiry_id);
     }
-    @RequestMapping("/conversion/create")
-    @ExceptionHandler
-    public ResultVO createConversion(@RequestBody FxConversionEntity fxConversionEntity){
 
-//        if (fxConversionService.addDetails(fxConversionEntity)){
-//            return new ResultVO(fxConversionEntity);
-//        }
-        return new ResultVO(ResultCode.ERROR);
+    @RequestMapping("/conversion/create")
+    public ResultVO createConversion(@Valid @RequestBody FxConversionEntity fxConversionEntity,
+                                     BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+
+               return new ResultVO(ResultCode.VALIDATE_FAILED,ResultCode.VALIDATE_FAILED.getMsg());
+
+        }else if (fxConversionService.addDetails(fxConversionEntity)){
+            return new ResultVO(fxConversionEntity,ResultCode.SUCCESS.getMsg());
+        }else
+        return new ResultVO(ResultCode.ERROR, ResultCode.ERROR.getMsg());
     }
 }

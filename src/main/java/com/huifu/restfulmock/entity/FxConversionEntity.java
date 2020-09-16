@@ -1,6 +1,7 @@
 package com.huifu.restfulmock.entity;
 
 import lombok.Data;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
