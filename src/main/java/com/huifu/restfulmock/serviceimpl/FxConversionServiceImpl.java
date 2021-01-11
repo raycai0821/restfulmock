@@ -4,7 +4,7 @@ import com.huifu.restfulmock.dao.FxConversionDetailsDao;
 import com.huifu.restfulmock.entity.FxConversionEntity;
 import com.huifu.restfulmock.service.FxConversionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+    import org.springframework.stereotype.Service;
 
 import java.util.List;
 

@@ -9,7 +9,6 @@ import com.huifu.restfulmock.serviceimpl.FxConversionServiceImpl;
 import com.huifu.restfulmock.vo.ResultVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -37,6 +36,12 @@ public class MockServerTest {
     public BatchDetailsEntity findDetailByid(@PathVariable("id") Integer inquiry_id) {
         return batchDetailsService.findDetail(inquiry_id);
     }
+
+    @GetMapping("/istio")
+    public String testIstio(){
+        return "这是灰度版本Ver1.0";
+    }
+
 
     @RequestMapping("/conversion/create")
     public ResultVO createConversion(@Valid @RequestBody FxConversionEntity fxConversionEntity,
