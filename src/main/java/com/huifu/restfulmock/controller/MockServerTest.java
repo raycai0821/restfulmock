@@ -39,7 +39,7 @@ public class MockServerTest {
 
     @GetMapping("/istio")
     public String testIstio(){
-        return "这是灰度版本Ver1.0";
+        return "这是灰度版本Ver1.02";
     }
 
 
