@@ -1,6 +1,6 @@
 BASE_PATH=/bea/jenkinsrun/dockerfile
 # 源jar路径
-SOURCE_PATH=/var/lib/jenkins/workspace/restMock/istio
+SOURCE_PATH=/var/lib/jenkins/workspace/istio
 #容器id
 CID=$(docker ps | grep "restfulmock" | awk '{print $1}')
 
