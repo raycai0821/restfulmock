@@ -1,6 +1,6 @@
 BASE_PATH=/bea/jenkinsrun/dockerfile
 # 源jar路径
-SOURCE_PATH=/var/lib/jenkins/workspace/restMock/target
+SOURCE_PATH=/var/lib/jenkins/workspace/restMock/istio
 #容器id
 CID=$(docker ps | grep "restfulmock" | awk '{print $1}')
 
@@ -8,8 +8,9 @@ DATE=`date +%Y%m%d%H%M`
 
 # 最新构建代码 移动到项目环境
 function transfer(){
-    echo "最新构建代码 $SOURCE_PATH/restfulmock-0.0.1-SNAPSHOT.jar  迁移至 $BASE_PATH ...."
-        sudo cp $SOURCE_PATH/restfulmock-0.0.1-SNAPSHOT.jar $BASE_PATH
+    echo "最新构建代码 $SOURCE_PATH/target/restfulmock-0.0.1-SNAPSHOT.jar  迁移至 $BASE_PATH ...."
+        sudo cp $SOURCE_PATH/target/restfulmock-0.0.1-SNAPSHOT.jar $BASE_PATH
+        sudo cp $SOURCE_PATH/{Dockerfile,run.sh } $BASE_PATH
 }
 # 备份
 function backup(){
