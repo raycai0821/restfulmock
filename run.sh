@@ -42,11 +42,11 @@ function run(){
 		echo "存在demo容器，CID=$CID,重启docker容器 ..."
 			sudo docker stop $CID
 			sudo docker rm $CID
-			sudo docker run -d -p 8080:8081 restfulmock-0.0.1-snapshot.jar:restfulmock
+			sudo docker run -d -p 8082:8082 restfulmock-0.0.1-snapshot.jar:restfulmock
 		echo "demo容器重启完成"
 	else
 		echo "不存在demo容器，docker run创建容器..."
-			sudo docker run -d -p 8080:8081 restfulmock-0.0.1-snapshot.jar:restfulmock
+			sudo docker run -d -p 8082:8082 restfulmock-0.0.1-snapshot.jar:restfulmock
 		echo "demo容器创建完成"
 	fi
 }
