@@ -30,7 +30,7 @@ function backup(){
 function build(){
 	echo "开始构建镜像..."
 	cd $BASE_PATH
-	sudo docker build -t restfulmock-0.0.1-snapshot.jar:restfulmock .
+	sudo docker build -t restfulmock-0.0.1-snapshot:restfulmock .
 }
 
 # 运行docker容器
@@ -42,11 +42,11 @@ function run(){
 		echo "存在demo容器，CID=$CID,重启docker容器 ..."
 			sudo docker stop $CID
 			sudo docker rm $CID
-			sudo docker run -d -p 8082:8082 restfulmock-0.0.1-snapshot.jar:restfulmock
+			sudo docker run -d -p 8082:8082 restfulmock-0.0.1-snapshot:restfulmock
 		echo "demo容器重启完成"
 	else
 		echo "不存在demo容器，docker run创建容器..."
-			sudo docker run -d -p 8082:8082 restfulmock-0.0.1-snapshot.jar:restfulmock
+			sudo docker run -d -p 8082:8082 restfulmock-0.0.1-snapshot:restfulmock
 		echo "demo容器创建完成"
 	fi
 }
