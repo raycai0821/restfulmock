@@ -44,10 +44,12 @@ function run(){
 			sudo docker rm $CID
 			sudo docker run -d -p 8082:8082 restfulmock-0.0.1-snapshot:restfulmock -v $BASE_PATH/conf/restmock:/restMock/conf
 		echo "demo容器重启完成"
+		echo "sudo docker run -d -p 8082:8082 restfulmock-0.0.1-snapshot:restfulmock -v $BASE_PATH/conf/restmock:/restMock/conf"
 	else
 		echo "不存在demo容器，docker run创建容器..."
 			sudo docker run -d -p 8082:8082 restfulmock-0.0.1-snapshot:restfulmock -v $BASE_PATH/conf/restmock:/restMock/conf
 		echo "demo容器创建完成"
+		echo "sudo docker run -d -p 8082:8082 restfulmock-0.0.1-snapshot:restfulmock -v $BASE_PATH/conf/restmock:/restMock/conf"
 	fi
 }
 
