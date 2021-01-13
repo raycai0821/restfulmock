@@ -11,7 +11,7 @@ function transfer(){
     echo "最新构建代码 $SOURCE_PATH/target/restfulmock-0.0.1-snapshot.jar  迁移至 $BASE_PATH ...."
         sudo cp $SOURCE_PATH/target/restfulmock-0.0.1-snapshot.jar $BASE_PATH
         sudo cp $SOURCE_PATH/{Dockerfile,run.sh} $BASE_PATH
-        sudo cp $SOURCE_PATH/target/classes/application.properties $BASE_PATH
+        sudo cp $SOURCE_PATH/target/classes/application.properties $BASE_PATH/conf/restmock
 }
 # 备份
 function backup(){
@@ -42,11 +42,11 @@ function run(){
 		echo "存在demo容器，CID=$CID,重启docker容器 ..."
 			sudo docker stop $CID
 			sudo docker rm $CID
-			sudo docker run -d -p 8082:8082 restfulmock-0.0.1-snapshot:restfulmock
+			sudo docker run -d -p 8082:8082 restfulmock-0.0.1-snapshot:restfulmock -v $BASE_PATH/conf/restmock:/restMock/conf
 		echo "demo容器重启完成"
 	else
 		echo "不存在demo容器，docker run创建容器..."
-			sudo docker run -d -p 8082:8082 restfulmock-0.0.1-snapshot:restfulmock
+			sudo docker run -d -p 8082:8082 restfulmock-0.0.1-snapshot:restfulmock -v $BASE_PATH/conf/restmock:/restMock/conf
 		echo "demo容器创建完成"
 	fi
 }
