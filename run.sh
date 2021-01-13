@@ -11,6 +11,7 @@ function transfer(){
     echo "最新构建代码 $SOURCE_PATH/target/restfulmock-0.0.1-snapshot.jar  迁移至 $BASE_PATH ...."
         sudo cp $SOURCE_PATH/target/restfulmock-0.0.1-snapshot.jar $BASE_PATH
         sudo cp $SOURCE_PATH/{Dockerfile,run.sh} $BASE_PATH
+        sudo cp $SOURCE_PATH/classes/application.properties $BASE_PATH
 }
 # 备份
 function backup(){
