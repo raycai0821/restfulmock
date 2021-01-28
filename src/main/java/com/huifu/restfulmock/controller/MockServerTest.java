@@ -7,6 +7,8 @@ import com.huifu.restfulmock.enums.ResultCode;
 import com.huifu.restfulmock.serviceimpl.BatchDetailsServiceImpl;
 import com.huifu.restfulmock.serviceimpl.FxConversionServiceImpl;
 import com.huifu.restfulmock.vo.ResultVO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +22,8 @@ import java.util.List;
 @RestController
 
 public class MockServerTest {
+
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private BatchDetailsServiceImpl batchDetailsService;
@@ -39,6 +43,7 @@ public class MockServerTest {
 
     @GetMapping("/istio")
     public String testIstio(){
+        logger.info("访问了这台机器");
         return "这是灰度版本Ver1.02.1";
     }
 
