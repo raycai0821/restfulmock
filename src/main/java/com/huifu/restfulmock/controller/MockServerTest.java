@@ -44,7 +44,7 @@ public class MockServerTest {
     @GetMapping("/istio")
     public String testIstio(){
         logger.info("访问了这台机器");
-        return "这是灰度版本Ver1.02.1";
+        return "这是灰度版本Ver1.03.1";
     }
 
 
